@@ -14,4 +14,12 @@ describe('example to-do app', () => {
     cy.get('[data-test="product-name"]').contains('Claw Hammer').click()
     cy.get('[data-test="add-to-cart"]').should('be.visible')
   })
+  it('clicking a contact button navigates to contact page', () => {
+    cy.get('[data-test="nav-contact"]').click()
+    cy.get('h3').should('have.text', 'Contact')
+    cy.get('[data-test="first-name"]').should('be.visible')
+    cy.get('[data-test="last-name"]').should('be.visible')
+    cy.get('[data-test="email"]').should('be.visible')
+  })
+   
 })
