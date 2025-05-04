@@ -14,6 +14,14 @@ describe('example to-do app', () => {
     cy.get('[data-test="product-name"]').contains('Claw Hammer').click()
     cy.get('[data-test="add-to-cart"]').should('be.visible')
   })
+
+  it('clicking a language button navigates to language page', () => {
+    cy.get('[data-test="language-select"]').click()
+    cy.get('#dropdown-animated').should('be.visible')
+    cy.get('[data-test="lang-de"]').should('be.visible')
+
+  })
+
   it('clicking a contact button navigates to contact page', () => {
     cy.get('[data-test="nav-contact"]').click()
     cy.get('h3').should('have.text', 'Contact')
