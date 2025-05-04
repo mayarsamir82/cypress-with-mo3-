@@ -22,4 +22,12 @@ describe('example to-do app', () => {
 
   })
 
+  it('clicking a contact button navigates to contact page', () => {
+    cy.get('[data-test="nav-contact"]').click()
+    cy.get('h3').should('have.text', 'Contact')
+    cy.get('[data-test="first-name"]').should('be.visible')
+    cy.get('[data-test="last-name"]').should('be.visible')
+    cy.get('[data-test="email"]').should('be.visible')
+  })
+   
 })
