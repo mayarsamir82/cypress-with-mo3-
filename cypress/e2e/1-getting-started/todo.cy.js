@@ -15,6 +15,18 @@ describe('example to-do app', () => {
     cy.get('[data-test="add-to-cart"]').should('be.visible')
   })
 
+  it('clicking a categories button navigates to product page', () => {
+    cy.get('[data-test="nav-categories"]').click()
+    cy.get('[data-test="nav-categories"]').contains('Categories').click()
+    cy.get('.navbar-nav > .dropdown > .dropdown-menu')
+    cy.get('[data-test="nav-hand-tools"]')
+    cy.get('[data-test="nav-power-tools"]')
+    cy.get('[data-test="nav-other"]')
+    cy.get('[data-test="nav-special-tools"]')
+    cy.get('[data-test="nav-rentals"]')
+    
+
+  })
   it('clicking a language button navigates to language page', () => {
     cy.get('[data-test="language-select"]').click()
     cy.get('#dropdown-animated').should('be.visible')
